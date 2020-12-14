@@ -16,9 +16,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
-top_markdown_text = '''
-can you read me?
-'''
+img = ('images/Figure_1.png')
 
 # # def Predict_Stock_Prices():
 #   # Get stock ticker input from user
@@ -149,11 +147,11 @@ can you read me?
 #   #   print(f"Error trying to import {ticker}")
 
 
-# # Predict_Stock_Prices()
+# Predict_Stock_Prices()
 
 app.layout = html.Div([
 
-    dcc.Markdown(children=top_markdown_text),
+    dcc.Markdown(children=img),
 
 ])
 
