@@ -61,9 +61,12 @@ def Predict_Stock_Prices():
     model.compile(optimizer = 'adam', loss = 'mean_squared_error')
     model.fit(xTrain, yTrain, epochs = 5, batch_size = 32, verbose = 1, validation_split=0.2)
 
+<<<<<<< HEAD
     mode.summary()
     model.save("LSTM_Base_Model.h5")
 
+=======
+>>>>>>> 2233897ff10d0908daf5ec8d35a86b0f924e24f5
     import numpy as np
 
     xTest = []
@@ -76,6 +79,7 @@ def Predict_Stock_Prices():
     # Run model to predict stock close price and scale to actual dollar values
     test_data_predictions = model.predict(xTest)
     final_test_predictions = scaler.inverse_transform(test_data_predictions)
+<<<<<<< HEAD
 
     # Pull last lookbackWindow from test dataset to make first prediction in the future
     live_data=test_data[-lookbackWindow:].reshape(1,-1)
@@ -138,6 +142,8 @@ def Predict_Stock_Prices():
     plt.plot(predictPlot)
     plt.legend(["Actual Stock Prices", "Predicted Stock Prices"])
     plt.show()
+=======
+>>>>>>> 2233897ff10d0908daf5ec8d35a86b0f924e24f5
   except:
     print(f"Error trying to import {ticker}")
 
