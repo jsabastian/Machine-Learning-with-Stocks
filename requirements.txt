@@ -1,5 +1,4 @@
 alpha_vantage
-dotenv
 os
 sklearn
 math
