@@ -51,7 +51,6 @@ def Predict_Stock_Prices():
     xTrain = np.reshape(xTrain, (xTrain.shape[0], xTrain.shape[1], 1))
     from keras.models import Sequential
     from keras.layers import LSTM, Dense, Dropout
-
     # Model starts as sequential and is assigned LSTM, Dropout, and Dense layers (See readme for parameter details)
     model = Sequential()
     model.add(LSTM(50, return_sequences = True, input_shape = (xTrain.shape[1], 1)))
@@ -60,15 +59,8 @@ def Predict_Stock_Prices():
     # Compile and fit model with train data to be used for predictions
     model.compile(optimizer = 'adam', loss = 'mean_squared_error')
     model.fit(xTrain, yTrain, epochs = 5, batch_size = 32, verbose = 1, validation_split=0.2)
-
-<<<<<<< HEAD
-    mode.summary()
+    model.summary()
     model.save("LSTM_Base_Model.h5")
-
-=======
->>>>>>> 2233897ff10d0908daf5ec8d35a86b0f924e24f5
-    import numpy as np
-
     xTest = []
     # Loop through data and assign lookback data to "prediction" true value
     for i in range(lookbackWindow, testSize):
@@ -79,7 +71,6 @@ def Predict_Stock_Prices():
     # Run model to predict stock close price and scale to actual dollar values
     test_data_predictions = model.predict(xTest)
     final_test_predictions = scaler.inverse_transform(test_data_predictions)
-<<<<<<< HEAD
 
     # Pull last lookbackWindow from test dataset to make first prediction in the future
     live_data=test_data[-lookbackWindow:].reshape(1,-1)
@@ -110,7 +101,6 @@ def Predict_Stock_Prices():
       i=i+1
     # Scale to actual dollar values
     final_future_predictions = scaler.inverse_transform(future_predictions)
-
     # !pip install pandas-market-calendars
     import datetime as dt
     import pandas as pd
@@ -142,8 +132,6 @@ def Predict_Stock_Prices():
     plt.plot(predictPlot)
     plt.legend(["Actual Stock Prices", "Predicted Stock Prices"])
     plt.show()
-=======
->>>>>>> 2233897ff10d0908daf5ec8d35a86b0f924e24f5
   except:
     print(f"Error trying to import {ticker}")
 
