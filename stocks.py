@@ -49,6 +49,17 @@ def Predict_Stock_Prices():
     # Reshape lists into arrays for input into LSTM model 
     xTrain, yTrain = np.array(xTrain), np.array(yTrain)
     xTrain = np.reshape(xTrain, (xTrain.shape[0], xTrain.shape[1], 1))
+    from keras.models import Sequential
+    from keras.layers import LSTM, Dense, Dropout
+
+    # Model starts as sequential and is assigned LSTM, Dropout, and Dense layers (See readme for parameter details)
+    model = Sequential()
+    model.add(LSTM(50, return_sequences = True, input_shape = (xTrain.shape[1], 1)))
+    model.add(LSTM(50))
+    model.add(Dense(1))
+    # Compile and fit model with train data to be used for predictions
+    model.compile(optimizer = 'adam', loss = 'mean_squared_error')
+    model.fit(xTrain, yTrain, epochs = 5, batch_size = 32, verbose = 1, validation_split=0.2)
   except:
     print(f"Error trying to import {ticker}")
 
