@@ -2,15 +2,15 @@
 # !pip install python-dotenv
 from alpha_vantage.timeseries import TimeSeries
 # Import API key
-from dotenv import load_dotenv
-import os
+# from dotenv import load_dotenv
+# import os
 # Add variable from environments
-load_dotenv()
+# load_dotenv()
 
 def Predict_Stock_Prices():
   # Get stock ticker input from user
   ticker = input('Type the Stock Ticker Label You Would Like To View: ')
-  api_key =  os.environ.get("api_key")
+  api_key =  'D46872A04A9M1143LCC'
   # Pull and update fields from Alpha Vantage
   try:
     ts = TimeSeries(key=api_key, output_format='pandas', indexing_type='integer')
@@ -32,9 +32,9 @@ def Predict_Stock_Prices():
     # Scale to normalize dataset
     scaler = MinMaxScaler(feature_range=(0, 1))
     scaled_data_set = scaler.fit_transform(close_data_set)
-    import math as m
-    # Split into train and test sets sequentially for LSTM model
-    trainSize = m.ceil(int(dataLength * 0.8))
+    # import math as m
+    # # Split into train and test sets sequentially for LSTM model
+    trainSize = int(dataLength * 0.8)
     testSize = int(dataLength) - trainSize
     train_data, test_data = scaled_data_set[0:trainSize,:], scaled_data_set[trainSize:dataLength,:]
     import numpy as np
