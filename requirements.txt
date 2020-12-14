@@ -14,7 +14,7 @@ Keras==2.4.3
 Keras-Preprocessing==1.1.2
 klearn==0.0.3
 numpy==1.18.5
-pandas @ file:///opt/concourse/worker/volumes/live/f14cf8c4-c564-4eff-4b17-158e90dbf88a/volume/pandas_1602088128240/work
+pandas
 pandas-datareader==0.9.0
 pandas-market-calendars==1.6.1
 plotly==4.14.1
