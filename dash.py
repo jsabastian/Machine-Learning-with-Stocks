@@ -3,13 +3,13 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 import plotly.graph_objs as go
-# from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output
 from keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
-# from alpha_vantage.timeseries import TimeSeries
-# from dotenv import load_dotenv
-# import os
+from alpha_vantage.timeseries import TimeSeries
+from dotenv import load_dotenv
+import os
 
 
 app = dash.Dash()
@@ -17,9 +17,9 @@ server = app.server
 
 scaler=MinMaxScaler(feature_range=(0,1))
 
-df = pd.read_csv("data/AAPL_test_data.csv")
+df = pd.read_csv("data/GOOGL.csv")
 
-df["date"]=pd.to_datetime(df.date,format="%m/%d/%y")
+df["date"]=pd.to_datetime(df.date,format="%Y/%m/%d")
 df.index=df['date']
 
 
