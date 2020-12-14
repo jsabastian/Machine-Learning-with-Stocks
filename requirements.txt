@@ -28,3 +28,4 @@ pandas
 sklearn
 pandas_market_calendars
 numpy
+tensorflow
