@@ -74,7 +74,7 @@ model.add(Dense(1))
 model.compile(optimizer = 'adam', loss = 'mean_squared_error')
 model.fit(xTrain, yTrain, epochs = 1, batch_size = 32, verbose = 1, validation_split=0.2)
 model.summary()
-model.save("LSTM_Base_Model.h5")
+# model.save("LSTM_Base_Model.h5")
 xTest = []
 # Loop through data and assign lookback data to "prediction" true value
 for i in range(lookbackWindow, testSize):
