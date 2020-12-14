@@ -1,1 +1,1 @@
-web: python stock.py
+web: python stocks.py
