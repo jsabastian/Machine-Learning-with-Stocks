@@ -1,0 +1,10 @@
+alpha_vantage
+dotenv
+os
+sklearn
+math
+numpy
+keras
+datetime
+pandas
+matplotlib
