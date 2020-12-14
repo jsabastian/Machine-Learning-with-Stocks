@@ -24,5 +24,7 @@ Werkzeug==1.0.1
 alpha_vantage
 keras
 datetime
-matplotlib
 pandas
+sklearn
+pandas_market_calendars
+numpy
