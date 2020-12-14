@@ -60,6 +60,19 @@ def Predict_Stock_Prices():
     # Compile and fit model with train data to be used for predictions
     model.compile(optimizer = 'adam', loss = 'mean_squared_error')
     model.fit(xTrain, yTrain, epochs = 5, batch_size = 32, verbose = 1, validation_split=0.2)
+
+    import numpy as np
+
+    xTest = []
+    # Loop through data and assign lookback data to "prediction" true value
+    for i in range(lookbackWindow, testSize):
+        xTest.append(test_data[i-lookbackWindow:i, 0])
+    # Reshape lists into arrays for input into LSTM model     
+    xTest = np.array(xTest) 
+    xTest = np.reshape(xTest, (xTest.shape[0], xTest.shape[1], 1))
+    # Run model to predict stock close price and scale to actual dollar values
+    test_data_predictions = model.predict(xTest)
+    final_test_predictions = scaler.inverse_transform(test_data_predictions)
   except:
     print(f"Error trying to import {ticker}")
 
