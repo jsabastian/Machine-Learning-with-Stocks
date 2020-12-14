@@ -25,3 +25,4 @@ alpha_vantage
 keras
 datetime
 matplotlib
+pandas
