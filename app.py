@@ -23,7 +23,7 @@ server = app.server
 
 # def Predict_Stock_Prices():
   # Get stock ticker input from user
-ticker = input('Type the Stock Ticker Label You Would Like To View: ')
+ticker = 'AAPL'
 api_key =  'D46872A04A9M1143LCC'
 # Pull and update fields from Alpha Vantage
 # try:
