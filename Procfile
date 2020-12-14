@@ -1,1 +1,1 @@
-web: gunicorn stock.py
+web: python stock.py
