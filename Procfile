@@ -1,1 +1,1 @@
-web: python stocks.py
+web: gunicorn app:server --log-file=-
