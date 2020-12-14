@@ -7,6 +7,16 @@ from alpha_vantage.timeseries import TimeSeries
 # Add variable from environments
 # load_dotenv()
 
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+server = app.server
+
+top_markdown_text = '''
+can you read me?
+'''
+
 def Predict_Stock_Prices():
   # Get stock ticker input from user
   ticker = input('Type the Stock Ticker Label You Would Like To View: ')
@@ -135,4 +145,14 @@ def Predict_Stock_Prices():
   except:
     print(f"Error trying to import {ticker}")
 
-Predict_Stock_Prices()
+
+# Predict_Stock_Prices()
+
+app.layout = html.Div([
+
+    dcc.Markdown(children=top_markdown_text),
+
+])
+
+if __name__ == '__main__':
+    app.run_server(debug=True)

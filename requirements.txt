@@ -25,4 +25,3 @@ alpha_vantage
 keras
 datetime
 matplotlib
-dotenv
