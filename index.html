@@ -43,119 +43,330 @@
   <p style="margin-left: 45px;margin-right: 45px;color: white;">Pick Your Stock is purely an experimental tool that was built by three students who wanted to better understand machine learning. This tool is by no means meant for actual investment strategy or planning.</p>
 </div>
 
-<!-- Containers for Graphs -->
+<!-- Container for Epochs -->
 <div id="epochs" class="container-fluid">
-  <div class="row">
     <h1 class="text-center">How Do Epochs Affect A Model?</h3>
-    <hr>
-    <div class="col-sm-6 text-center">
-        <!-- this is where we will put the first graph-->
-        <div class="slideanim">
-            <img src="output_graphs/1.png">
+        <hr>
+        <p class="text-center">Definition of an Epoch</p>
+        <hr>
+    <!-- Epochs Carousel-->
+    <div id="epochCarousel" class="carousel slide text-center" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#epochCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#epochCarousel" data-slide-to="1"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-sm-6 text-center">
-        <!-- this is where we will put the first graph-->
-        <div class="slideanim">
-            <img src="output_graphs/2.png">
-        </div>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h2>Graph 1</h2>
-      <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4><br>
-      <p>this is where we will write about how it affects the graph</p>
-      <br>
+      </div>
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#epochCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#epochCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
 
-<br>
 
+<!-- Container for Batch Size -->
 <div id="batch-size" class="container-fluid bg-grey">
-  <div class="row">
-      <!-- this is where we will put the second graph-->
-    <div class="col-sm-4 text-center">
-        <div class="slideanim">
-            <img src="output_graphs/3.png">
+    <h1 class="text-center">What About Batch Size?</h3>
+        <hr>
+        <p class="text-center">Definition of Batch Size</p>
+        <hr>
+    <!-- Batch Size Carousel-->
+    <div id="batch_size_Carousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#batch_size_Carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#batch_size_Carousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
         </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#batch_size_Carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#batch_size_Carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
     </div>
-    <div class="col-sm-8 text-center">
-      <h2>Graph 2</h2>
-      <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
-      <br>
-      <p>this is where we will write about how it affects the graph</p>
-      <br>
     </div>
-  </div>
-</div>
 
-<br>
-
+    <!--Container for LSTM-->
 <div id="lstm" class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6 text-center">
-        <h2>Graph 3</h2>
-        <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4><br>
-        <p>this is where we will write about how it affects the graph</p>
-        <br>
-      </div>
-      <div class="col-sm-3 text-center">
-          <!-- this is where we will put the first graph-->
-        <span class="glyphicon glyphicon-signal logo slideanim"></span>
-      </div>
-      <div class="col-sm-3 text-center">
-        <!-- this is where we will put the first graph-->
-      <span class="glyphicon glyphicon-signal logo slideanim"></span>
+    <h1 class="text-center">Let's Take A Look At LSTM?</h3>
+        <hr>
+        <p class="text-center">Definition of LSTM</p>
+        <hr>
+    <!-- LSTM Carousel-->
+    <div id="lstm_Carousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#lstm_Carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#lstm_Carousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#lstm_Carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#lstm_Carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
     </div>
     </div>
-  </div>
 
-  <br>
-
+<!-- Container for Dense-->
   <div id="dense" class="container-fluid bg-grey">
-    <div class="row">
-        <!-- this is where we will put the second graph-->
-      <div class="col-sm-6 text-center">
-        <span class="glyphicon glyphicon-globe logo slideanim"></span>
-      </div>
-      <div class="col-sm-6 text-center">
-        <span class="glyphicon glyphicon-globe logo slideanim"></span>
-      </div>
+    <h1 class="text-center">How Dense Do We Need to Be?</h3>
+        <hr>
+        <p class="text-center">Definition of Dense</p>
+        <hr>
+    <!-- Dense Carousel-->
+    <div id="denseCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#denseCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#denseCarousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#denseCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#denseCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
     </div>
-    <br>
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <h2>Graph 4</h2>
-        <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
-        <br>
-        <p>this is where we will write about how it affects the graph</p>
-        <br>
-      </div>
     </div>
-  </div>
 
-  <br>
-
+<!--Container for Dropout-->
   <div id="dropout" class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6 text-center">
-        <h2>Graph 5</h2>
-        <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4><br>
-        <p>this is where we will write about how it affects the graph</p>
-        <br>
-      </div>
-      <div class="col-sm-3 text-center">
-          <!-- this is where we will put the first graph-->
-        <span class="glyphicon glyphicon-signal logo slideanim"></span>
-      </div>
-      <div class="col-sm-3 text-center">
-        <!-- this is where we will put the first graph-->
-      <span class="glyphicon glyphicon-signal logo slideanim"></span>
+    <h1 class="text-center">Dropout Rate? Like, from College?</h3>
+        <hr>
+        <p class="text-center">Definition of Dropout</p>
+        <hr>
+    <!-- Dropout Carousel-->
+    <div id="dropoutCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#dropoutCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#dropoutCarousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Graph 1</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#dropoutCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#dropoutCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
     </div>
     </div>
-  </div>
 <footer class= "container-fluid text-center" style="background:  rgb(25, 25, 187);">
     <div class="container-fluid" style="color: white;">
         <p>Thank you for visiting our website! You can take a peek at the code used to make this site by clicking on the BULLY icon below! <a href="https://github.com/CoreyGaunt/ml-stock-predictions" title="Cyber Booleans!"><br><br><img id="bully" src="images/bully.png"></a>
