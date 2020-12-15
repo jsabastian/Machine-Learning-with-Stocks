@@ -15,9 +15,9 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
-test = pd.read_csv('test_data/AAPL_test_data.csv')
+test = pd.read_csv('CSV')
 test2= pd.DataFrame(test)
-test3=test2["close"]
+test3=test2["4. close"]
 
 fig = px.scatter(test3)
 
@@ -26,7 +26,7 @@ app.layout = html.Div(children=[
   html.H1(children = ('Stock Prediction')),
 
   html.Div(children = '''
-    Cyber-Booleans: For all mankind
+    Cyber-Booleans: For All Mankind
     '''),
     
     dcc.Graph(
