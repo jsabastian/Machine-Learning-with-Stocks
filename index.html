@@ -16,22 +16,21 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
+        <div class="navbar navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand" href="https://github.com/CoreyGaunt/ml-stock-predictions">
-            <img src= "images/bully.png"></a>
+        <a class="navbar-brand" href="#myPage">BACK TO TOP</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#portfolio">PORTFOLIO</a></li>
-            <li><a href="#pricing">PRICING</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#epochs">EPOCHS</a></li>
+            <li><a href="#batch-size">BATCH SIZE</a></li>
+            <li><a href="#lstm">LSTM</a></li>
+            <li><a href="#dense">DENSE</a></li>
+            <li><a href="#dropout">DROPOUT</a></li>
         </ul>
         </div>
     </div>
@@ -45,35 +44,44 @@
 </div>
 
 <!-- Containers for Graphs -->
-<div class="container-fluid">
+<div id="epochs" class="container-fluid">
   <div class="row">
+    <h1 class="text-center">How Do Epochs Affect A Model?</h3>
+    <hr>
     <div class="col-sm-6 text-center">
+        <!-- this is where we will put the first graph-->
+        <div class="slideanim">
+            <img src="output_graphs/1.png">
+        </div>
+    </div>
+    <div class="col-sm-6 text-center">
+        <!-- this is where we will put the first graph-->
+        <div class="slideanim">
+            <img src="output_graphs/2.png">
+        </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-center">
       <h2>Graph 1</h2>
       <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4><br>
       <p>this is where we will write about how it affects the graph</p>
       <br>
     </div>
-    <div class="col-sm-3 text-center">
-        <!-- this is where we will put the first graph-->
-      <span class="glyphicon glyphicon-signal logo slideanim"></span>
-    </div>
-    <div class="col-sm-3 text-center">
-        <!-- this is where we will put the first graph-->
-      <span class="glyphicon glyphicon-signal logo slideanim"></span>
-    </div>
   </div>
-</div>
 
-<div class="container-fluid bg-grey">
+<br>
+
+<div id="batch-size" class="container-fluid bg-grey">
   <div class="row">
       <!-- this is where we will put the second graph-->
-    <div class="col-sm-3 text-center">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    <div class="col-sm-4 text-center">
+        <div class="slideanim">
+            <img src="output_graphs/3.png">
+        </div>
     </div>
-    <div class="col-sm-3 text-center">
-        <span class="glyphicon glyphicon-globe logo slideanim"></span>
-      </div>
-    <div class="col-sm-6 text-center">
+    <div class="col-sm-8 text-center">
       <h2>Graph 2</h2>
       <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
       <br>
@@ -83,7 +91,9 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<br>
+
+<div id="lstm" class="container-fluid">
     <div class="row">
       <div class="col-sm-6 text-center">
         <h2>Graph 3</h2>
@@ -102,16 +112,21 @@
     </div>
   </div>
 
-  <div class="container-fluid bg-grey">
+  <br>
+
+  <div id="dense" class="container-fluid bg-grey">
     <div class="row">
         <!-- this is where we will put the second graph-->
-      <div class="col-sm-3 text-center">
-        <span class="glyphicon glyphicon-globe logo slideanim"></span>
-      </div>
-      <div class="col-sm-3 text-center">
+      <div class="col-sm-6 text-center">
         <span class="glyphicon glyphicon-globe logo slideanim"></span>
       </div>
       <div class="col-sm-6 text-center">
+        <span class="glyphicon glyphicon-globe logo slideanim"></span>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-12 text-center">
         <h2>Graph 4</h2>
         <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
         <br>
@@ -121,9 +136,29 @@
     </div>
   </div>
 
+  <br>
+
+  <div id="dropout" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <h2>Graph 5</h2>
+        <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4><br>
+        <p>this is where we will write about how it affects the graph</p>
+        <br>
+      </div>
+      <div class="col-sm-3 text-center">
+          <!-- this is where we will put the first graph-->
+        <span class="glyphicon glyphicon-signal logo slideanim"></span>
+      </div>
+      <div class="col-sm-3 text-center">
+        <!-- this is where we will put the first graph-->
+      <span class="glyphicon glyphicon-signal logo slideanim"></span>
+    </div>
+    </div>
+  </div>
 <footer class= "container-fluid text-center" style="background:  rgb(25, 25, 187);">
     <div class="container-fluid" style="color: white;">
-        <p>Thank you for visiting our website! You can take a peek at the code used to make this site by following this link: <a href="https://github.com/CoreyGaunt/ml-stock-predictions" title="Visit Our Project Repo!">Github Repo</a>
+        <p>Thank you for visiting our website! You can take a peek at the code used to make this site by clicking on the BULLY icon below! <a href="https://github.com/CoreyGaunt/ml-stock-predictions" title="Cyber Booleans!"><br><br><img id="bully" src="images/bully.png"></a>
         </p>
     </div>
 </footer>
