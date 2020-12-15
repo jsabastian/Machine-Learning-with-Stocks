@@ -30,6 +30,7 @@
             <li><a href="#lstm">LSTM</a></li>
             <li><a href="#dense">DENSE</a></li>
             <li><a href="#dropout">DROPOUT</a></li>
+            <li><a href="#combined">PUTTING IT ALL TOGETHER</a></li>
         </ul>
         </div>
     </div>
@@ -80,14 +81,14 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 text-center">
                     <div class="slideanim">
-                        <img src="output_graphs/2.png">
+                        <img src="output_graphs/5.png">
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h2>Increased Epoch Number</h2>
+                    <h2>High Epoch Number</h2>
                     <h4>On the other end, having a high number of epochs will increase the time it takes to process your data. The benefit of this is an increase in model accuracy</h4>
                     <br>
                 </div>
@@ -127,7 +128,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 text-center">
                     <div class="slideanim">
-                        <img src="output_graphs/1.png">
+                        <img src="output_graphs/8.png">
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
@@ -135,7 +136,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>Low Batch Size</h2>
-                    <h4>things definitely happen when it's low, you bet your ass</h4>
+                    <h4>Smaller batch size will increase the time it takes to run the algorithm, but in exchange the algorithm validates itself more often which leads to increased accuracy of your model fit</h4>
                     <br>
                 </div>
             </div>
@@ -145,7 +146,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 text-center">
                     <div class="slideanim">
-                        <img src="output_graphs/1.png">
+                        <img src="output_graphs/11.png">
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
@@ -153,7 +154,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>High Batch Size</h2>
-                    <h4>there are also some things that happen when it's high, swear on my mama</h4>
+                    <h4>Higher batch sizes allow for much faster processing time, but the data is validated less often making it more prone to error</h4>
                     <br>
                 </div>
             </div>
@@ -192,7 +193,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 text-center">
                     <div class="slideanim">
-                        <img src="output_graphs/1.png">
+                        <img src="output_graphs/3.png">
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
@@ -200,7 +201,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>Few LSTM Layers</h2>
-                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <h4>Less nodes to process timeseries data making it much less accurate</h4>
                     <br>
                 </div>
             </div>
@@ -210,7 +211,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 text-center">
                     <div class="slideanim">
-                        <img src="output_graphs/1.png">
+                        <img src="output_graphs/14.png">
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
@@ -218,7 +219,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>Many LSTM Layers</h2>
-                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <h4>Generally better fit with more layers, but does have a threshold depending upon what you're evaluating. Adding LSTM layers will not increase runtime as drastically as Epochs or Batch Size, but it will still have an affect</h4>
                     <br>
                 </div>
             </div>
@@ -257,7 +258,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 text-center">
                     <div class="slideanim">
-                        <img src="output_graphs/1.png">
+                        <img src="output_graphs/3.png">
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
@@ -265,7 +266,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>Few Dense</h2>
-                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <h4>Less dense layers means fewer hidden nodes which equates to less interaction between all nodes</h4>
                     <br>
                 </div>
             </div>
@@ -275,7 +276,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 text-center">
                     <div class="slideanim">
-                        <img src="output_graphs/1.png">
+                        <img src="output_graphs/17.png">
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
@@ -283,7 +284,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>Many Dense</h2>
-                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <h4>Ironically, in an LSTM model - high density nodes cause less accuracy by confusing the sequential aspect of the timeseries data</h4>
                     <br>
                 </div>
             </div>
@@ -322,7 +323,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 text-center">
                     <div class="slideanim">
-                        <img src="output_graphs/1.png">
+                        <img src="output_graphs/20.png">
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
@@ -330,7 +331,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>Low Dropout Rate</h2>
-                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <h4>Low dropout rates may result in a very tightly fit model, which can be unfavorable if you are overfitting your model - meaning, it is not actually predicting future values</h4>
                     <br>
                 </div>
             </div>
@@ -340,7 +341,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 text-center">
                     <div class="slideanim">
-                        <img src="output_graphs/1.png">
+                        <img src="output_graphs/29.png">
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
@@ -348,7 +349,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>High Dropout Rate</h2>
-                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <h4>Allows for a more fluid model, but less tight fit - may predict more generally into the future</h4>
                     <br>
                 </div>
             </div>
@@ -361,6 +362,87 @@
         <span class="sr-only">Previous</span>
         </a>
         <a class="right carousel-control" href="#dropoutCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+
+<!--Combined Container-->
+<div id="combined" class="container-fluid bg-grey">
+    <h1 class="text-center">What Happens When You Put It All Together?</h3>
+    <!-- Combined Carousel-->
+    <div id="combinedCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#combinedCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#combinedCarousel" data-slide-to="1"></li>
+        <li data-target="#combinedCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/17.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Too Little Machine Learning</h2>
+                    <h4>Not enough layers leads to loosely fitted predictions</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/20.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Just Right - Sweet Spot!</h2>
+                    <h4>Carefully balanced between LSTM and Dense</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/23.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Too Much Number Crunching</h2>
+                    <h4>Higher runtimes and less accuracy - not a good combination</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#combinedCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#combinedCarousel" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
         </a>
