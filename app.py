@@ -1,4 +1,3 @@
-
 import plotly.express as px
 
 import dash
@@ -15,12 +14,19 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
-test = pd.read_csv('test_data/Stock_Close_Predictions.csv')
-test2= pd.DataFrame(test)
-test3=test2["Predicted Close Price ($ USD)"]
+input_CSV = pd.read_csv("test_data/Stock_Close_Predictions.csv")
+Dash_df= pd.DataFrame(input_CSV)
+Dash_df.set_index("Date", inplace=True, drop=True)
 
-fig1 = px.scatter(test3)
-
+fig = px.scatter(Dash_df["Actual Stock Price ($ USD)"])
+# fig = go.Figure()
+# fig.add_trace(go.Scatter(x=test2.keys, y=test2["Actual Close Price ($ USD)"],
+#                     mode='lines',
+#                     name='lines'))
+# fig.add_trace(go.Scatter(x=test2["Date"], y=test2["Predicted Close Price ($ USD)"],
+#                     mode='lines',
+#                     name='lines'))  
+# fig.show()
 
 app.layout = html.Div(children=[
   html.H1(children = ('Stock Prediction')),
@@ -31,14 +37,14 @@ app.layout = html.Div(children=[
     
     dcc.Graph(
       id='test',
-      figure = fig1
+      figure = fig
     
     )
 ])
+
 # app.layout = html.Div([
    
 #     html.H1("Stock Price Analysis Dashboard", style={"textAlign": "center"}),
-   
 #     dcc.Tabs(children=[
        
 #         dcc.Tab(label='Stock Data',children=[
