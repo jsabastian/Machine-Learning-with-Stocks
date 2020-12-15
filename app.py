@@ -156,18 +156,20 @@ predictPlot = pd.DataFrame(list(final_test_predictions) + list(final_future_pred
   # plt.show()
   # except:
   #   print(f"Error trying to import {ticker}")
-act_close = pd.DataFrame(close_data_set)
+# act_close = pd.DataFrame(close_data_set)
 
 # Predict_Stock_Prices()
 
-# fig = px.scatter(predictPlot)
+fig = px.scatter(predictPlot)
 # fig_actual = px.scatter(act_close)
-df1 = pd.DataFrame()
-actual_close_price = close_data_set[trainSize+lookbackWindow:]
-true_close_price = np.append(actual_close_price, np.repeat(np.nan, (len(predictPlot) - len(actual_close_price))))
-df1["actual_close_price"] = true_close_price
-predicted_close_price = np.concatenate(predictPlot).ravel().tolist()
-df1["predicted_close_price"] = predicted_close_price
+
+
+# df1 = pd.DataFrame()
+# actual_close_price = close_data_set[trainSize+lookbackWindow:]
+# true_close_price = np.append(actual_close_price, np.repeat(np.nan, (len(predictPlot) - len(actual_close_price))))
+# df1["actual_close_price"] = true_close_price
+# predicted_close_price = np.concatenate(predictPlot).ravel().tolist()
+# df1["predicted_close_price"] = predicted_close_price
 
 app.layout = html.Div(children=[
   html.H1(children = (f'{ticker} Stock Prediction')),
@@ -178,7 +180,7 @@ app.layout = html.Div(children=[
     
     dcc.Graph(
       id='test',
-      figure = df1
+      figure = fig
     
     )
 
@@ -186,4 +188,4 @@ app.layout = html.Div(children=[
 ])
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(debug=True)
