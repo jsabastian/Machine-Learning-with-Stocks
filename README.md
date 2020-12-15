@@ -10,6 +10,6 @@
 #### Once a valid stock ticker is entered, the API will automatically pull the entirety of that company's stock data and run the script. For implementation on Heroku, these changes must be pushed to the GitHub repository, which will automatically update the chart online. This happens automatically through app.py, since it pulls the data from a CSV file, which is updated by the ML_stock_predictions.ipynb file. It is done this way due to the limitation of Heroku, which does not have the processing power to run the Machine Learning code on it's own.
 
 
-### For more in-depth information about our model and the parameters used, please visit our project landing page here: 
+### For more in-depth information about our model and the parameters used, please visit our project landing page here: https://coreygaunt.github.io/ml-stock-predictions/
 
 ### Link to Heroku Deployment: http://guarded-castle-81488.herokuapp.com/
