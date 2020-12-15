@@ -137,9 +137,9 @@ schedule["market_close"] = pd.to_datetime(schedule["market_close"]).dt.date
 NYSE_Dates = schedule["market_close"].astype(str).to_list()
 # Increment dates every 20 to see on X axis
 Clean_NYSE_Dates = NYSE_Dates[0::20]
-print(df["date"].iloc[trainSize])
-print(Clean_NYSE_Dates)
-print(schedule)
+# print(df["date"].iloc[trainSize])
+# print(Clean_NYSE_Dates)
+# print(schedule)
 # Combine test predictions with future predictions to compare to actual test data
 predictPlot = pd.DataFrame(list(final_test_predictions) + list(final_future_predictions))
   # Establish Plot
@@ -188,4 +188,4 @@ app.layout = html.Div(children=[
 ])
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
