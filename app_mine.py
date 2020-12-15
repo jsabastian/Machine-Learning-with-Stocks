@@ -17,9 +17,9 @@ server = app.server
 
 scaler=MinMaxScaler(feature_range=(0,1))
 
-df = pd.read_csv("data/AAPL_test_data.csv")
+df = pd.read_csv("test_data/GOOGL_test_data.csv")
 
-df["date"]=pd.to_datetime(df.date,format="%m/%d/%y")
+df["date"]=pd.to_datetime(df.date,format="%Y/%m/%d")
 df.index=df['date']
 
 
