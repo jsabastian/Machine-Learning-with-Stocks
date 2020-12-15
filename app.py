@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 13a6d7615663afb210865a62f68e106fdae4c008
 import plotly.express as px
 
 import dash
@@ -9,27 +5,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
-<<<<<<< HEAD
-
-
-
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
-server = app.server
-
-test = pd.read_csv('CSV')
-test2= pd.DataFrame(test)
-test3=test2["4. close"]
-
-fig = px.scatter(test3)
-
-
-app.layout = html.Div(children=[
-  html.H1(children = ('Stock Prediction')),
-
-=======
 
 
 
@@ -56,7 +31,6 @@ fig.show()
 app.layout = html.Div(children=[
   html.H1(children = ('Stock Prediction')),
 
->>>>>>> 13a6d7615663afb210865a62f68e106fdae4c008
   html.Div(children = '''
     Cyber-Booleans: For All Mankind
     '''),
@@ -66,12 +40,6 @@ app.layout = html.Div(children=[
       figure = fig
     
     )
-<<<<<<< HEAD
-
-
-])
-
-=======
 ])
 
 # app.layout = html.Div([
@@ -120,6 +88,5 @@ app.layout = html.Div(children=[
 #             ])                
 #         ])
 
->>>>>>> 13a6d7615663afb210865a62f68e106fdae4c008
 if __name__ == '__main__':
     app.run_server(debug=False)
