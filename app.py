@@ -17,6 +17,7 @@ server = app.server
 input_CSV = pd.read_csv("test_data/Stock_Close_Predictions.csv")
 Dash_df= pd.DataFrame(input_CSV)
 Dash_df.set_index("Date", inplace=True, drop=True)
+ticker = Dash_df.iloc[0,2]
 #test = Dash_df.rename(columns={'Actual Close Price ($ USD)':"Actual",'Predicted Close Price ($ USD)':"Predicted"})
 # fig = px.scatter(Dash_df["Actual Stock Price ($ USD)"])
 fig = go.Figure()
@@ -29,14 +30,14 @@ fig.add_trace(go.Scatter(x=Dash_df.index, y=Dash_df.iloc[:,1],
 fig.show()
 
 app.layout = html.Div(children=[
-  html.H1(children = ('Stock Prediction')),
+  html.H1(children = (f'{ticker} Stock Prediction')),
 
   html.Div(children = '''
     Cyber-Booleans: For All Mankind
     '''),
     
     dcc.Graph(
-      id='test',
+      id='graph',
       figure = fig
     
     )
