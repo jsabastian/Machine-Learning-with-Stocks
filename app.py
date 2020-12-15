@@ -172,7 +172,9 @@ app.layout = html.Div(children=[
     
     dcc.Graph(
       id='test',
-      figure = fig
+      figure = {
+        'data':[ fig, fig_actual]
+      }
     )
 
 
