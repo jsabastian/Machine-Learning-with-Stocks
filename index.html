@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pick Your Stock! - Get Stock Predictions Today!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#myPage">BACK TO TOP</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#epochs">EPOCHS</a></li>
+            <li><a href="#batch-size">BATCH SIZE</a></li>
+            <li><a href="#lstm">LSTM</a></li>
+            <li><a href="#dense">DENSE</a></li>
+            <li><a href="#dropout">DROPOUT</a></li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+
+<div class="jumbotron text-center">
+  <h1>Invest in the Future with Pick Your Stock!</h1>
+  <br>
+  <br>
+  <p style="margin-left: 45px;margin-right: 45px;color: white;">Pick Your Stock is purely an experimental tool that was built by three students who wanted to better understand machine learning. This tool is by no means meant for actual investment strategy or planning.</p>
+</div>
+
+<!-- Container for Epochs -->
+<div id="epochs" class="container-fluid">
+    <h1 class="text-center">How Do Epochs Affect A Model?</h3>
+        <hr>
+        <p class="text-center">DEFINITION - An epoch is a term used in machine learning and indicates the number of passes of the entire training dataset the machine learning algorithm has completed</p>
+        <hr>
+    <!-- Epochs Carousel-->
+    <div id="epochCarousel" class="carousel slide text-center" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#epochCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#epochCarousel" data-slide-to="1"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Small Number of Epochs</h2>
+                    <h4>Will allow the model to run quicker, but lower epochs decreases the overall accuracy of the model</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/2.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Increased Epoch Number</h2>
+                    <h4>On the other end, having a high number of epochs will increase the time it takes to process your data. The benefit of this is an increase in model accuracy</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#epochCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#epochCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+
+<!-- Container for Batch Size -->
+<div id="batch-size" class="container-fluid bg-grey">
+    <h1 class="text-center">What About Batch Size?</h3>
+        <hr>
+        <p class="text-center">DEFINITION - Batch size is a term used in machine learning and refers to the number of training examples utilized in one iteration.</p>
+        <hr>
+    <!-- Batch Size Carousel-->
+    <div id="batch_size_Carousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#batch_size_Carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#batch_size_Carousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Low Batch Size</h2>
+                    <h4>things definitely happen when it's low, you bet your ass</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>High Batch Size</h2>
+                    <h4>there are also some things that happen when it's high, swear on my mama</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#batch_size_Carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#batch_size_Carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+
+    <!--Container for LSTM-->
+<div id="lstm" class="container-fluid">
+    <h1 class="text-center">Let's Take A Look At LSTM?</h3>
+        <hr>
+        <p class="text-center">DEFINITION - Long short-term memory (LSTM) is an artificial recurrent neural network (RNN) architecture used in the field of deep learning. Unlike standard feedforward neural networks, LSTM has feedback connections. It can not only process single data points (such as images), but also entire sequences of data (such as speech or video)</p>
+        <hr>
+    <!-- LSTM Carousel-->
+    <div id="lstm_Carousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#lstm_Carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#lstm_Carousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Few LSTM Layers</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Many LSTM Layers</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#lstm_Carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#lstm_Carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+
+<!-- Container for Dense-->
+  <div id="dense" class="container-fluid bg-grey">
+    <h1 class="text-center">How Dense Do We Need to Be?</h3>
+        <hr>
+        <p class="text-center">DEFINITION - A dense layer is just a regular layer of neurons in a neural network. Each neuron recieves input from all the neurons in the previous layer, thus densely connected.</p>
+        <hr>
+    <!-- Dense Carousel-->
+    <div id="denseCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#denseCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#denseCarousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Few Dense</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Many Dense</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#denseCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#denseCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+
+<!--Container for Dropout-->
+  <div id="dropout" class="container-fluid">
+    <h1 class="text-center">Dropout Rate? Like, from College?</h3>
+        <hr>
+        <p class="text-center">DEFINITION - Dropout is a a technique used to tackle Overfitting . The Dropout method in keras.layers module takes in a float between 0 and 1, which is the fraction of the neurons to drop.</p>
+        <hr>
+    <!-- Dropout Carousel-->
+    <div id="dropoutCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <li data-target="#dropoutCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#dropoutCarousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Low Dropout Rate</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+            </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 text-center">
+                    <div class="slideanim">
+                        <img src="output_graphs/1.png">
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>High Dropout Rate</h2>
+                    <h4>In this graph we set the parameters to the thing, ya know - from the things?</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#dropoutCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#dropoutCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+<footer class= "container-fluid text-center" style="background:  rgb(25, 25, 187);">
+    <div class="container-fluid" style="color: white;">
+        <p>Thank you for visiting our website! You can take a peek at the code used to make this site by clicking on the BULLY icon below! <a href="https://github.com/CoreyGaunt/ml-stock-predictions" title="Cyber Booleans!"><br><br><img id="bully" src="images/bully.png"></a>
+        </p>
+    </div>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      // Store hash
+      var hash = this.hash;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+<link href="./static/style.css" rel='stylesheet'>
+</body>
+</html>
