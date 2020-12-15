@@ -12,7 +12,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
-import app
+# import app
 import scipy
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
@@ -160,8 +160,14 @@ act_close = pd.DataFrame(close_data_set)
 
 # Predict_Stock_Prices()
 
-fig = px.scatter(predictPlot)
-fig_actual = px.scatter(act_close)
+# fig = px.scatter(predictPlot)
+# fig_actual = px.scatter(act_close)
+df1 = pd.DataFrame()
+actual_close_price = close_data_set[trainSize+lookbackWindow:]
+true_close_price = np.append(actual_close_price, np.repeat(np.nan, (len(predictPlot) - len(actual_close_price))))
+df1["actual_close_price"] = true_close_price
+predicted_close_price = np.concatenate(predictPlot).ravel().tolist()
+df1["predicted_close_price"] = predicted_close_price
 
 app.layout = html.Div(children=[
   html.H1(children = (f'{ticker} Stock Prediction')),
@@ -172,9 +178,8 @@ app.layout = html.Div(children=[
     
     dcc.Graph(
       id='test',
-      figure = {
-        'data':[ fig, fig_actual]
-      }
+      figure = df1
+    
     )
 
 
