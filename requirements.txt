@@ -11,11 +11,11 @@ Flask-PyMongo
 Flask-RESTful
 Flask-SQLAlchemy
 gunicorn
-h5py
+h5py==2.10.0
 Keras
 Keras-Preprocessing
 klearn
-numpy==1.18.5
+numpy==1.19.2
 pandas
 pandas-market-calendars
 plotly
@@ -23,4 +23,4 @@ scikit-image
 scikit-learn
 scipy
 sklearn
-tensorflow
+tensorflow-cpu
