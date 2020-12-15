@@ -156,12 +156,12 @@ predictPlot = pd.DataFrame(list(final_test_predictions) + list(final_future_pred
   # plt.show()
   # except:
   #   print(f"Error trying to import {ticker}")
-
+act_close = pd.DataFrame(close_data_set)
 
 # Predict_Stock_Prices()
 
 fig = px.scatter(predictPlot)
-# fig_actual = px.scatter(data_set)
+fig_actual = px.scatter(act_close)
 
 app.layout = html.Div(children=[
   html.H1(children = (f'{ticker} Stock Prediction')),
