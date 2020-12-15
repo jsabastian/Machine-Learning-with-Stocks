@@ -17,15 +17,15 @@ server = app.server
 input_CSV = pd.read_csv("test_data/Stock_Close_Predictions.csv")
 Dash_df= pd.DataFrame(input_CSV)
 Dash_df.set_index("Date", inplace=True, drop=True)
-
+#test = Dash_df.rename(columns={'Actual Close Price ($ USD)':"Actual",'Predicted Close Price ($ USD)':"Predicted"})
 # fig = px.scatter(Dash_df["Actual Stock Price ($ USD)"])
 fig = go.Figure()
-fig.add_trace(go.Scatter(x=test2.index, y=test2["Actual Close Price ($ USD)"],
-                    mode='scatter',
-                    name='Actual Stock Price'))
-fig.add_trace(go.Scatter(x=test2.index, y=test2["Predicted Close Price ($ USD)"],
-                    mode='scatter',
-                    name='Predicted Stock Close Price'))  
+fig.add_trace(go.Scatter(x=Dash_df.index, y=Dash_df.iloc[:,0],
+                    mode='lines',
+                    name='Actual Close Price ($ USD)'))
+fig.add_trace(go.Scatter(x=Dash_df.index, y=Dash_df.iloc[:,1],
+                    mode='lines',
+                    name='Predicted Close Price ($ USD)'))  
 fig.show()
 
 app.layout = html.Div(children=[
