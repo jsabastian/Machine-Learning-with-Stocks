@@ -15,11 +15,11 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
-test = pd.read_csv('CSV')
+test = pd.read_csv('test_data/Stock_Close_Predictions.csv')
 test2= pd.DataFrame(test)
-test3=test2["4. close"]
+test3=test2["Predicted Close Price ($ USD)"]
 
-fig = px.scatter(test3)
+fig1 = px.scatter(test3)
 
 
 app.layout = html.Div(children=[
@@ -31,12 +31,56 @@ app.layout = html.Div(children=[
     
     dcc.Graph(
       id='test',
-      figure = fig
+      figure = fig1
     
     )
-
-
 ])
+# app.layout = html.Div([
+   
+#     html.H1("Stock Price Analysis Dashboard", style={"textAlign": "center"}),
+   
+#     dcc.Tabs(children=[
+       
+#         dcc.Tab(label='Stock Data',children=[
+#             html.Div([
+#                 html.H2("Actual Closing Price",style={"textAlign": "center"}),
+#                 dcc.Graph(
+#                     id="Actual Data",
+#                     figure={
+#                         "data":[
+#                             go.Scatter(
+#                                 x=train.index,
+#                                 y=valid["Close"],
+#                                 mode='markers'
+#                             )
+#                         ],
+#                         "layout":go.Layout(
+#                             title='scatter plot',
+#                             xaxis={'title':'Date'},
+#                             yaxis={'title':'Closing Rate'}
+#                         )
+#                     }
+#                 ),
+#                 html.H2("LSTM Predicted Closing Price",style={"textAlign": "center"}),
+#                 dcc.Graph(
+#                     id="Predicted Data",
+#                     figure={
+#                         "data":[
+#                             go.Scatter(
+#                                 x=valid.index,
+#                                 y=valid["Predictions"],
+#                                 mode='markers'
+#                             )
+#                         ],
+#                         "layout":go.Layout(
+#                             title='scatter plot',
+#                             xaxis={'title':'Date'},
+#                             yaxis={'title':'Closing Rate'}
+#                         )
+#                     }
+#                 )                
+#             ])                
+#         ])
 
 if __name__ == '__main__':
     app.run_server(debug=False)
