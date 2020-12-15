@@ -13,6 +13,14 @@ import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
 import app
+import scipy
+from sklearn.preprocessing import MinMaxScaler
+import numpy as np
+from keras.models import Sequential
+from keras.layers import LSTM, Dense, Dropout
+import datetime as dt
+import pandas as pd
+import pandas_market_calendars as mcal
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -40,7 +48,7 @@ df.head()
 df.insert(0,"index", df.index)
 data_set = df
 data_set.head()
-from sklearn.preprocessing import MinMaxScaler
+
 # Pull close data from dataframe and reshape
 close_data_set = data_set["close"].values.reshape(-1,1)
 dataLength = len(close_data_set)
@@ -52,7 +60,7 @@ scaled_data_set = scaler.fit_transform(close_data_set)
 trainSize = int(dataLength * 0.8)
 testSize = int(dataLength) - trainSize
 train_data, test_data = scaled_data_set[0:trainSize,:], scaled_data_set[trainSize:dataLength,:]
-import numpy as np
+
 xTrain = []
 yTrain = []
 # Amount of prior days to take into account for each day's prediction
@@ -64,8 +72,7 @@ for i in range(lookbackWindow, trainSize):
 # Reshape lists into arrays for input into LSTM model 
 xTrain, yTrain = np.array(xTrain), np.array(yTrain)
 xTrain = np.reshape(xTrain, (xTrain.shape[0], xTrain.shape[1], 1))
-from keras.models import Sequential
-from keras.layers import LSTM, Dense, Dropout
+
 # Model starts as sequential and is assigned LSTM, Dropout, and Dense layers (See readme for parameter details)
 model = Sequential()
 model.add(LSTM(50, return_sequences = True, input_shape = (xTrain.shape[1], 1)))
@@ -74,7 +81,7 @@ model.add(Dense(1))
 # Compile and fit model with train data to be used for predictions
 model.compile(optimizer = 'adam', loss = 'mean_squared_error')
 model.fit(xTrain, yTrain, epochs = 1, batch_size = 32, verbose = 1, validation_split=0.2)
-model.summary()
+# model.summary()
 # model.save("LSTM_Base_Model.h5")
 xTest = []
 # Loop through data and assign lookback data to "prediction" true value
@@ -117,9 +124,7 @@ while(i<predictWindow):
 # Scale to actual dollar values
 final_future_predictions = scaler.inverse_transform(future_predictions)
 # !pip install pandas-market-calendars
-import datetime as dt
-import pandas as pd
-import pandas_market_calendars as mcal
+
 # import matplotlib
 # # matplotlib.use("TkAgg")
 # from matplotlib import pyplot as plt
