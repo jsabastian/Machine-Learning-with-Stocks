@@ -12,4 +12,4 @@
 
 ### For more in-depth information about our model and the parameters used, please visit our project landing page here: https://coreygaunt.github.io/ml-stock-predictions/
 
-### Link to Heroku Deployment: http://guarded-castle-81488.herokuapp.com/
+### Link to Heroku Deployment: https://guarded-castle-81488.herokuapp.com/
